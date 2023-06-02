@@ -1,3 +1,4 @@
+import ApexChart from "@/components/Charts/ApexChart";
 import RightSidebarContent from "@/components/Index/RightSideBar/RightSidebarContent";
 import Container from "@/components/Layout/Container";
 import HeroBtn from "@/components/utilities/HeroBtn";
@@ -179,7 +180,9 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-                <div className="w-full h-[498px] bg-card rounded-xl"></div>
+                <div className="w-full min-h-[498px] max-h-[498px] bg-card rounded-xl">
+                    <ApexChart/>
+                </div>
             </div>
             <div>
                 <RightSidebarContent />
