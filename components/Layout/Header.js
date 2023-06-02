@@ -4,7 +4,7 @@ import Drawer from "../utilities/Drawer";
 
 function Header() {
     const [isOpen, setIsOpen] = useState(false);
-
+    const [showFullText, setShowFullText] = useState(false);
     return (
         <>
             <header className="w-full border-b border-border-b px-10 h-[82px] flex items-center justify-between">
@@ -20,8 +20,14 @@ function Header() {
                 </div>
                 <div className="items-center gap-10 hidden mix-xl:flex ">
                     <div className="flex items-center gap-4">
-                        <button className="border border-[#21D7D7] w-[238px] h-10 rounded-2xl text-btnSecondery font-semibold text-lg">
-                            oSQTZ: tz1xxxx...xxxx
+                        <button
+                            onClick={() => setShowFullText(!showFullText)}
+                            className={`border border-[#21D7D7] h-10 rounded-2xl 
+                        text-btnSecondery font-semibold text-lg transition-all duration-300 ${
+                            showFullText ? "w-[300px]" : "w-[238px]"
+                        }`}
+                        >
+                            {showFullText ? "oSQTZ: tz1xxxx1xxxxxxxx" : "oSQTZ: tz1xxxx...xxxx"}
                         </button>
                         <button className="bg-btnSecondery font-bold text-[19px] w-[208px] h-10 rounded-lg">
                             CONNECT WALLET
@@ -53,16 +59,22 @@ function Header() {
                             />
                         </svg>
                     </div>
-                    <button className="border border-[#21D7D7] w-[238px] h-10 rounded-2xl text-btnSecondery font-semibold text-lg">
-                        oSQTZ: tz1xxxx...xxxx
+                    <button
+                        onClick={() => setShowFullText(!showFullText)}
+                        className={`border border-[#21D7D7] h-10 rounded-2xl 
+                        text-btnSecondery font-semibold text-lg transition-all duration-300 ${
+                            showFullText ? "w-[500px]" : "w-[238px]"
+                        }`}
+                    >
+                        {showFullText ? "oSQTZ: tz1xxxx1xxxxxxxx" : "oSQTZ: tz1xxxx...xxxx"}
                     </button>
-                <ul className="gap-2 text-2xl flex-col text-linkText flex">
-                    <li className="cursor-pointer">Trade</li>
-                    <li className="cursor-pointer">Strategies</li>
-                    <li className="cursor-pointer">Positions</li>
-                    <li className="cursor-pointer">LP</li>
-                    <li className="cursor-pointer">FAQ</li>
-                </ul>
+                    <ul className="gap-2 text-2xl flex-col text-linkText flex">
+                        <li className="cursor-pointer">Trade</li>
+                        <li className="cursor-pointer">Strategies</li>
+                        <li className="cursor-pointer">Positions</li>
+                        <li className="cursor-pointer">LP</li>
+                        <li className="cursor-pointer">FAQ</li>
+                    </ul>
                 </div>
             </Drawer>
         </>

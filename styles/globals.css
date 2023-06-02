@@ -4,3 +4,14 @@
 @tailwind components;
 @tailwind utilities;
 
+input[type="range"]::-webkit-slider-thumb {
+  background-color: white; /* Set the background color to white */
+}
+
+input[type="range"]::-moz-range-thumb {
+  background-color: white; /* Set the background color to white */
+}
+
+input[type="range"]::-ms-thumb {
+  background-color: white; /* Set the background color to white */
+}
