@@ -180,8 +180,22 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-                <div id="chart-container" className="w-full min-h-[498px] max-h-[498px] bg-card rounded-xl">
-                    <ApexChart/>
+                <div id="chart-container" className="w-full px-2 py-6 min-h-[498px] max-h-[498px] bg-card  rounded-xl">
+                    <div className="flex items-center gap-0">
+                        <div className="font-medium text-xl w-[600px] p-1.5 flex items-center mx-4 h-[51px] rounded-xl border border-btnSecondery">
+                            <button className=" px-2 rounded-xl bg-btnSecondery/20 text-btnSecondery h-full min-w-fit">
+                                Historical 365D PNL Simulation
+                            </button>
+                            <button className="px-2 rounded-xl text-cardText h-full w-full">Payoff</button>
+                            <button className="px-2 rounded-xl text-cardText h-full w-full">Funding</button>
+                            <button className="px-2 rounded-xl text-cardText h-full w-full">Risks</button>
+                        </div>
+                        <div className="font-medium text-xl w-[170px] p-1.5 flex items-center px-4 h-[51px] rounded-xl border relative border-cardText">
+                            <input className="w-full text-white focus:outline-none bg-transparent" type="text" value={365} />
+                            <p className=" absolute -top-3 left-4 bg-card text-cardText text-sm">Historical Days</p>
+                        </div>
+                    </div>
+                    <ApexChart />
                 </div>
             </div>
             <div>
