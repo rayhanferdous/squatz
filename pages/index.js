@@ -2,8 +2,10 @@ import ApexChart from "@/components/Charts/ApexChart";
 import RightSidebarContent from "@/components/Index/RightSideBar/RightSidebarContent";
 import Container from "@/components/Layout/Container";
 import HeroBtn from "@/components/utilities/HeroBtn";
+import { useState } from "react";
 
 export default function Home() {
+    const [activeChartBtn, setActiveChartBtn] = useState(1);
     return (
         <Container className={"flex justify-between pt-8"}>
             <div className="w-[1244px] flex flex-col gap-11">
@@ -180,22 +182,125 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-                <div id="chart-container" className="w-full px-2 py-6 min-h-[498px] max-h-[498px] bg-card  rounded-xl">
+                <div
+                    id="chart-container"
+                    className={`${
+                        [2].includes(activeChartBtn) ? " h-fit" : "min-h-[498px] max-h-[498px]"
+                    } w-full px-2 py-6  bg-card
+                 rounded-xl`}
+                >
                     <div className="flex items-center gap-0">
                         <div className="font-medium text-xl w-[600px] p-1.5 flex items-center mx-4 h-[51px] rounded-xl border border-btnSecondery">
-                            <button className=" px-2 rounded-xl bg-btnSecondery/20 text-btnSecondery h-full min-w-fit">
+                            <button
+                                onClick={() => setActiveChartBtn(1)}
+                                className={` px-2 rounded-xl h-full min-w-fit ${
+                                    activeChartBtn == 1 ? "bg-btnSecondery/20 text-btnSecondery" : "text-cardText"
+                                }`}
+                            >
                                 Historical 365D PNL Simulation
                             </button>
-                            <button className="px-2 rounded-xl text-cardText h-full w-full">Payoff</button>
-                            <button className="px-2 rounded-xl text-cardText h-full w-full">Funding</button>
-                            <button className="px-2 rounded-xl text-cardText h-full w-full">Risks</button>
+                            <button
+                                onClick={() => setActiveChartBtn(2)}
+                                className={` px-2 rounded-xl h-full w-full ${
+                                    activeChartBtn == 2 ? "bg-btnSecondery/20 text-btnSecondery" : "text-cardText"
+                                }`}
+                            >
+                                Payoff
+                            </button>
+                            <button
+                                onClick={() => setActiveChartBtn(3)}
+                                className={` px-2 rounded-xl h-full w-full ${
+                                    activeChartBtn == 3 ? "bg-btnSecondery/20 text-btnSecondery" : "text-cardText"
+                                }`}
+                            >
+                                Funding
+                            </button>
+                            <button
+                                onClick={() => setActiveChartBtn(4)}
+                                className={` px-2 rounded-xl h-full w-full ${
+                                    activeChartBtn == 4 ? "bg-btnSecondery/20 text-btnSecondery" : "text-cardText"
+                                }`}
+                            >
+                                Risks
+                            </button>
                         </div>
                         <div className="font-medium text-xl w-[170px] p-1.5 flex items-center px-4 h-[51px] rounded-xl border relative border-cardText">
-                            <input className="w-full text-white focus:outline-none bg-transparent" type="text" value={365} />
-                            <p className=" absolute -top-3 left-4 bg-card text-cardText text-sm">Historical Days</p>
+                            <input
+                                className="w-full text-white focus:outline-none bg-transparent"
+                                type="text"
+                                value={365}
+                            />
+                            <p className=" absolute -top-3 px-1 left-4 bg-card text-cardText text-sm">
+                                Historical Days
+                            </p>
                         </div>
                     </div>
-                    <ApexChart />
+                    {[1].includes(activeChartBtn) && (
+                        <div className="flex gap-7 w-full">
+                            <div className="w-full">
+                                <div>
+                                    <div>
+                                        <button>Funding</button>
+                                        <button>VOL</button>
+                                    </div>
+                                    <div>
+                                        <button>Day</button>
+                                        <button>Month</button>
+                                        <button>Annualized</button>
+                                    </div>
+                                </div>
+                                <ApexChart />
+                            </div>
+                            <div className="min-w-[278px] max-w-[278px]">
+                                <h2 className="font-medium text-2xl text-btnSecondery">What is squatz?</h2>
+                                <p className="text-white mt-10">
+                                    Long squatz (XTZ) gives you a leveraged position with unlimited upside, protected
+                                    downside, and no liquidations. Compared to a 2x leveraged position, you make more
+                                    when XTZ goes up and lose less when XTZ goes down (excluding funding). Eg. If XTZ
+                                    goes up 5x, squeeth goes up 25x. You pay a funding rate for this position. Enter the
+                                    position by purchasing an FA1.2 token.{" "}
+                                    <span className="text-btnSecondery">Learn more.</span>
+                                </p>
+                            </div>
+                        </div>
+                    )}
+                    {[3].includes(activeChartBtn) && (
+                        <div className="flex gap-7 w-full">
+                            <div className="w-full">
+                                <div>
+                                    <div>
+                                        <button>Funding</button>
+                                        <button>VOL</button>
+                                    </div>
+                                    <div>
+                                        <button>Day</button>
+                                        <button>Month</button>
+                                        <button>Annualized</button>
+                                    </div>
+                                </div>
+                                <ApexChart />
+                            </div>
+                            
+                        </div>
+                    )}
+                    {[4].includes(activeChartBtn) && (
+                        <div className="flex flex-col gap-7 w-full px-7 mt-7">
+                            <h2 className="font-medium text-2xl text-btnSecondery">Risks</h2>
+                            <p className="text-white">
+                                Funding is paid out of your position, similar to selling a small amount of squeeth at
+                                funding, reducing your position size. Holding the position for a long period of time
+                                without upward movements in ETH can lose considerable funds to funding payments. Squeeth
+                                smart contracts have been audited by Trail of Bits, Akira, and Sherlock. However, smart
+                                contracts are experimental technology and we encourage caution only risking funds you
+                                can afford to lose. Profitability also depends on the price you enter and exit, which is
+                                dependent on implied volatility (the premium of squeeth to ETH). If the squeeth premium
+                                to ETH decreases, without a change in ETH price, a long position will incur a loss
+                                because it is not worth as much ETH. If ETH goes down considerably, you may lose some or
+                                all of your initial investment. Learn More.{" "}
+                                <span className="text-btnSecondery">Learn more.</span>
+                            </p>
+                        </div>
+                    )}
                 </div>
             </div>
             <div>

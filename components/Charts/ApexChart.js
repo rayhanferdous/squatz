@@ -317,8 +317,6 @@ const ApexChart = () => {
             x: new Date("2023-08-01").getTime(),
             y: 25.8,
         },
-
-        // Add more data points here...
     ];
     const chartData1 = [
         {
@@ -357,7 +355,6 @@ const ApexChart = () => {
         // Add more data points here...
     ];
     const chartData2 = [
-        
         {
             x: new Date("2023-02-01").getTime(),
             y: 30.2,
@@ -386,8 +383,6 @@ const ApexChart = () => {
             x: new Date("2023-08-01").getTime(),
             y: 25.8,
         },
-        
-        
     ];
 
     const series = [
@@ -408,7 +403,7 @@ const ApexChart = () => {
 
     const options = {
         chart: {
-            height: 432,
+            height: 400,
             type: "area",
             stacked: false,
         },
@@ -417,7 +412,7 @@ const ApexChart = () => {
         },
         stroke: {
             curve: "straight",
-            fill: '#FFFFFF',
+            fill: "#FFFFFF",
         },
         xaxis: {
             type: "datetime",
@@ -456,10 +451,9 @@ const ApexChart = () => {
         },
     };
 
-
     return (
-        <div id="chart-timeline" className="">
-            <ApexCharts options={options} series={series} type="area" height={432} />
+        <div id="chart-timeline" className="w-full">
+            <ApexCharts options={options} series={series} type="area" height={400} />
         </div>
     );
 };
