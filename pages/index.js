@@ -180,7 +180,7 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-                <div className="w-full min-h-[498px] max-h-[498px] bg-card rounded-xl">
+                <div id="chart-container" className="w-full min-h-[498px] max-h-[498px] bg-card rounded-xl">
                     <ApexChart/>
                 </div>
             </div>

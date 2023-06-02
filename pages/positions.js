@@ -5,7 +5,7 @@ function positions() {
     return (
         <Container className={"flex justify-between pt-20"}>
             <div className="flex flex-col gap-14">
-                <div className="flex gap-40 ">
+                <div className="flex gap-10 sm:gap-40 max-sm:flex-col">
                     <div className="flex flex-col gap-8 font-medium">
                         <h2 className="text-2xl text-btnSecondery">Your Positions</h2>
                         <p className="text-[22px] text-white">No active positions</p>
