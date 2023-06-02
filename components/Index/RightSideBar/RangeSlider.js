@@ -28,9 +28,9 @@ const RangeSlider = () => {
                 className={`w-full h-3 ${getSliderColor()} appearance-none rounded-full outline-none`}
             />
             <div className="ml-4">
-                {value <= 20 && <span className="text-red-500">Danger</span>}
-                {value > 20 && value <= 30 && <span className="text-yellow-500">Risky</span>}
-                {value > 30 && <span className="text-green-500">Safe</span>}
+                {value <= 30 && <span className="text-red-500">Danger</span>}
+                {value > 30 && value <= 50 && <span className="text-yellow-500">Risky</span>}
+                {value > 50 && <span className="text-green-500">Safe</span>}
             </div>
         </div>
     );
