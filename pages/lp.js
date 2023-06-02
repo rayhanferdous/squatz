@@ -1,9 +1,10 @@
 import RightSidebarContent from "@/components/Index/RightSideBar/RightSidebarContent";
 import Container from "@/components/Layout/Container";
 import HeroBtn from "@/components/utilities/HeroBtn";
-import React from "react";
+import React, { useState } from "react";
 
 function lp() {
+    const [buyMint, setBuyMint] = useState(true);
     return (
         <Container className={"flex justify-between pt-8"}>
             <div className="w-[1244px] flex flex-col gap-11">
@@ -33,15 +34,27 @@ function lp() {
                     </div>
                 </div>
                 <div className="w-[270px] h-[63px] border py-1.5 px-1 flex items-center border-btnSecondery rounded-xl">
-                    <div className="w-full h-full bg-[#2A4041] text-btnSecondery font-semibold text-lg rounded-xl flex items-center justify-center">
+                    <button
+                        onClick={() => setBuyMint(true)}
+                        className={`w-full h-full font-semibold text-lg rounded-xl flex items-center justify-center ${
+                            buyMint ? "bg-[#2A4041] text-btnSecondery " : "text-cardText"
+                        }`}
+                    >
                         Buy and LP
-                    </div>
-                    <div className="w-full h-full flex items-center justify-center text-cardText font-semibold text-lg">
-                        Buy and LP
-                    </div>
+                    </button>
+                    <button
+                        onClick={() => setBuyMint(false)}
+                        className={`w-full h-full font-semibold text-lg rounded-xl flex items-center justify-center ${
+                            !buyMint ? "bg-[#2A4041] text-btnSecondery " : "text-cardText"
+                        }`}
+                    >
+                        Mint and LP
+                    </button>
                 </div>
                 <div>
-                    <h2 className="font-medium text-[25px] text-btnSecondery">Buy squeeth and LP</h2>
+                    <h2 className="font-medium text-[25px] text-btnSecondery">
+                        {buyMint ? "Buy squeeth and LP" : "Mint squeeth and LP"}
+                    </h2>
                     <p className="font-medium text-white text-lg">Earn a payoff similar to XTZ1.5</p>
                 </div>
                 <div>
