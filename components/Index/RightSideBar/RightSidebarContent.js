@@ -63,8 +63,7 @@ function RightSidebarContent() {
                         </div>
                     </div>
                 )}
-                {activeLong ? openLong ? <LongOpen /> : <LongClose /> : ""}
-                {!activeLong ? openShort ? <ShortOpen /> : <ShortClose /> : ""}
+                {activeLong ? openLong ? <LongOpen /> : <LongClose /> : openShort ? <ShortOpen /> : <ShortClose />}
             </div>
         </div>
     );

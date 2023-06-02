@@ -18,7 +18,7 @@ function LongClose() {
                   <RightSideBarCard />
               </div>
               <RightSideBarTotalCard />
-              <RightSideBarBtnCard />
+              <RightSideBarBtnCard name='SELL TO CLOSE' />
               <div className="text-center">
                   <span className=" font-medium text-cardText">Trades on Uniswap via Auto Router</span>
               </div>
