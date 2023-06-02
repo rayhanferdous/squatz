@@ -9,7 +9,7 @@ function Header() {
         <>
             <header className="w-full border-b border-border-b px-10 h-[82px] flex items-center justify-between">
                 <div className="flex items-center">
-                    <img src="/assets/logo.png" alt="" />
+                    <img className="max-mix-xl:w-[125px]" src="/assets/logo.png" alt="" />
                     <ul className=" items-center gap-7 text-2xl text-linkText hidden mix-xl:flex">
                         <li className="cursor-pointer">Trade</li>
                         <li className="cursor-pointer">Strategies</li>
