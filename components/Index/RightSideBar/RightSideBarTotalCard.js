@@ -1,3 +1,4 @@
+import DownArrowSvg from "@/components/Svg/DownArrowSvg";
 import React from "react";
 
 function RightSideBarTotalCard() {
@@ -11,7 +12,7 @@ function RightSideBarTotalCard() {
                 <div>Price Impact:</div>
                 <div className="text-darkGreen"> 0%</div>
             </div>
-            <p className="text-white">V</p>
+            <DownArrowSvg/>
         </div>
     );
 }
