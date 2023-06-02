@@ -6,6 +6,7 @@ import { useState } from "react";
 
 export default function Home() {
     const [activeChartBtn, setActiveChartBtn] = useState(1);
+    const [activeFund, setActiveFund] = useState(true);
     return (
         <Container className={"flex justify-between pt-8"}>
             <div className="w-[1244px] flex flex-col gap-11">
@@ -185,7 +186,7 @@ export default function Home() {
                 <div
                     id="chart-container"
                     className={`${
-                        [2].includes(activeChartBtn) ? " h-fit" : "min-h-[498px] max-h-[498px]"
+                        [2,3].includes(activeChartBtn) ? "h-fit" : "min-h-[498px] max-h-[498px]"
                     } w-full px-2 py-6  bg-card
                  rounded-xl`}
                 >
@@ -237,20 +238,7 @@ export default function Home() {
                     </div>
                     {[1].includes(activeChartBtn) && (
                         <div className="flex gap-7 w-full">
-                            <div className="w-full">
-                                <div>
-                                    <div>
-                                        <button>Funding</button>
-                                        <button>VOL</button>
-                                    </div>
-                                    <div>
-                                        <button>Day</button>
-                                        <button>Month</button>
-                                        <button>Annualized</button>
-                                    </div>
-                                </div>
-                                <ApexChart />
-                            </div>
+                            <ApexChart />
                             <div className="min-w-[278px] max-w-[278px]">
                                 <h2 className="font-medium text-2xl text-btnSecondery">What is squatz?</h2>
                                 <p className="text-white mt-10">
@@ -267,20 +255,31 @@ export default function Home() {
                     {[3].includes(activeChartBtn) && (
                         <div className="flex gap-7 w-full">
                             <div className="w-full">
-                                <div>
-                                    <div>
-                                        <button>Funding</button>
-                                        <button>VOL</button>
+                                <div className="flex justify-between items-center px-6 my-5">
+                                    <div className="flex items-center gap-3">
+                                        <button
+                                            onClick={() => setActiveFund(true)}
+                                            className="bg-white px-2 py-2 rounded-xl"
+                                        >
+                                            Funding
+                                        </button>
+                                        <button
+                                            onClick={() => setActiveFund(false)}
+                                            className="bg-white px-2 py-2 rounded-xl"
+                                        >
+                                            VOL
+                                        </button>
                                     </div>
-                                    <div>
-                                        <button>Day</button>
-                                        <button>Month</button>
-                                        <button>Annualized</button>
-                                    </div>
+                                    {activeFund && (
+                                        <div className="flex items-center gap-3">
+                                            <button className="bg-white px-2 py-2 rounded-xl">Day</button>
+                                            <button className="bg-white px-2 py-2 rounded-xl">Month</button>
+                                            <button className="bg-white px-2 py-2 rounded-xl">Annualized</button>
+                                        </div>
+                                    )}
                                 </div>
                                 <ApexChart />
                             </div>
-                            
                         </div>
                     )}
                     {[4].includes(activeChartBtn) && (
