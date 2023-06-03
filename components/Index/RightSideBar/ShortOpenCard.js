@@ -8,7 +8,7 @@ function ShortOpenCard() {
                 <div>$0.00</div>
             </div>
             <div className="flex item-center justify-between font-medium text-[23px] text-white">
-                <div>0</div>
+                <input className="text-white w-full bg-transparent focus:outline-none" type="text" placeholder="0" />
                 <div>ETH</div>
             </div>
             <div className="flex item-center gap-4 text-sm text-white">

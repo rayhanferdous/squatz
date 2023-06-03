@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import RightSideBarCard from "./RightSideBarCard";
 import InfoText from "./InfoText";
 import RightSideBarTotalCard from "./RightSideBarTotalCard";
@@ -7,8 +7,11 @@ import SettingSvg from "@/components/Svg/SettingSvg";
 import ShortOpenCard from "./ShortOpenCard";
 import RangeSlider from "./RangeSlider";
 import ShortOpenCardBG from "./ShortOpenCardBG";
+import CollatrealRange from "./CollatrealRange";
 
 function ShortOpen() {
+        const [value, setValue] = useState(150);
+
     return (
         <div className="p-8 ">
             <div className="flex items-center justify-between mb-4">
@@ -23,7 +26,8 @@ function ShortOpen() {
                             <input
                                 className="w-full text-white focus:outline-none bg-transparent"
                                 type="text"
-                                value={365}
+                                readOnly
+                                value={value}
                             />
                             <p className=" absolute -top-3 px-1 left-4 bg-card text-cardText text-sm">
                                 Collatreal Ratio
@@ -32,7 +36,8 @@ function ShortOpen() {
                         </div>
                         <p className="text-xs text-cardText mt-2">At risk of liquidation at 150%</p>
                     </div>
-                    <RangeSlider />
+                    <CollatrealRange value={value} setValue={setValue} />
+                    {/* <RangeSlider /> */}
                     <ShortOpenCardBG />
                 </div>
                 <RightSideBarTotalCard />

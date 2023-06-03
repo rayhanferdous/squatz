@@ -4,7 +4,7 @@ import RightSideBarBtnCard from './RightSideBarBtnCard copy';
 import SettingSvg from '@/components/Svg/SettingSvg';
 import RightSideBarShortCloseCard from './RightSideBarShortCloseCard';
 import InfoText from './InfoText';
-import AccordionTwo from './AccordionTwo';
+import Dropdown from './Dropdown';
 
 function ShortClose() {
   return (
@@ -17,10 +17,7 @@ function ShortClose() {
               <div className="flex flex-col gap-5">
                   <RightSideBarShortCloseCard />
                   <RightSideBarShortCloseCard />
-                  <AccordionTwo>
-                      <InfoText />
-                      <InfoText />
-                  </AccordionTwo>
+                  <Dropdown/>
                   <div className="mt-4 flex flex-col gap-3">
                       <InfoText />
                       <InfoText />

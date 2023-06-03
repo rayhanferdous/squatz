@@ -8,7 +8,7 @@ export default function Home() {
     const [activeChartBtn, setActiveChartBtn] = useState(1);
     const [activeFund, setActiveFund] = useState(true);
     return (
-        <Container className={"flex justify-between pt-8 max-mix-xl:flex-col max-res-xl:gap-8"}>
+        <Container className={"flex pt-8 max-mix-xl:flex-col gap-6"}>
             <div className="res-xl:w-[1244px] max-res-xl:w-full flex flex-col gap-11">
                 <div className="">
                     <div className="flex gap-2 items-center">

@@ -1,4 +1,3 @@
-import RightSidebarContent from "@/components/Index/RightSideBar/RightSidebarContent";
 import ShortClose from "@/components/Index/RightSideBar/ShortClose";
 import ShortOpen from "@/components/Index/RightSideBar/ShortOpen";
 import Container from "@/components/Layout/Container";
@@ -22,18 +21,14 @@ function lp() {
                         </div>
                     </div>
                     <div className="flex gap-10 items-center mt-5 ml-6 max-xl:flex-col">
-                        <div className="cus-sm:min-w-[459px] hovered cus-sm:max-w-[459px] max-cus-sm:w-full h-[181px] flex flex-col gap-3.5 rounded-xl bg-card p-8">
-                            <div className="flex justify-between">
-                                <HeroBtn titleOne={"XTZ² Price"} />
-                                <HeroBtn titleOne={"XTZ² Price"} />
-                                <HeroBtn titleOne={"XTZ² Price"} />
-                            </div>
-                            <div className="flex gap-10">
-                                <HeroBtn titleOne={"XTZ² Price"} />
-                                <HeroBtn titleOne={"XTZ² Price"} />
-                            </div>
+                        <div className="cus-sm:min-w-[459px] hovered cus-sm:max-w-[459px] max-cus-sm:w-full grid   max-[360px]:grid-cols-1 cus-sm:grid-cols-3 gap-3.5 rounded-xl bg-card p-8">
+                            <HeroBtn titleOne={"XTZ² Price"} />
+                            <HeroBtn titleOne={"XTZ² Price"} />
+                            <HeroBtn titleOne={"XTZ² Price"} />
+                            <HeroBtn titleOne={"XTZ² Price"} />
+                            <HeroBtn titleOne={"XTZ² Price"} />
                         </div>
-                        <div className="min-w-[459px] hovered max-w-[459px] text-white text-lg h-[181px] flex flex-col gap-3.5 rounded-xl bg-card p-8">
+                        <div className="max-cus-sm:min-w-full cus-sm:min-w-[459px] hovered cus-sm:max-w-[459px] text-white text-lg h-[181px] flex flex-col gap-3.5 rounded-xl bg-card p-8">
                             No LP Positions
                         </div>
                     </div>
@@ -88,61 +83,59 @@ function lp() {
                     </p>
                 </div>
             </div>
-            <div className="flex flex-col items-center gap-2">
-                {mintToLP || squatzToLp ? (
-                    <div>
-                        <div
-                            onClick={() => {
-                                setMintToLp(false);
-                                setSquatzToLp(false);
-                            }}
-                            className="flex items-center mb-5 gap-2 cursor-pointer"
-                        >
-                            <svg className="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fff">
-                                <path
-                                    fillRule="evenodd"
-                                    d="M7.28 7.72a.75.75 0 010 1.06l-2.47 2.47H21a.75.75 0 010 1.5H4.81l2.47 2.47a.75.75 0 11-1.06 1.06l-3.75-3.75a.75.75 0 010-1.06l3.75-3.75a.75.75 0 011.06 0z"
-                                    clipRule="evenodd"
-                                />
-                            </svg>
-                            <p className="font-medium text-white">Close</p>
-                        </div>
-
-                        <div className="w-[459px] bg-card rounded-xl hovered">
-                            {mintToLP && <ShortOpen />}
-                            {squatzToLp && <ShortClose />}
-                        </div>
+            {mintToLP || squatzToLp ? (
+                <div>
+                    <div
+                        onClick={() => {
+                            setMintToLp(false);
+                            setSquatzToLp(false);
+                        }}
+                        className="flex items-center mb-5 gap-2 cursor-pointer"
+                    >
+                        <svg className="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fff">
+                            <path
+                                fillRule="evenodd"
+                                d="M7.28 7.72a.75.75 0 010 1.06l-2.47 2.47H21a.75.75 0 010 1.5H4.81l2.47 2.47a.75.75 0 11-1.06 1.06l-3.75-3.75a.75.75 0 010-1.06l3.75-3.75a.75.75 0 011.06 0z"
+                                clipRule="evenodd"
+                            />
+                        </svg>
+                        <p className="font-medium text-white">Close</p>
                     </div>
-                ) : (
-                    <>
-                        <h2 className="font-medium text-[22px] text-btnSecondery">Obtain Squatz</h2>
-                        <div
-                            onClick={() => {
-                                setMintToLp(true);
-                                setSquatzToLp(false);
-                            }}
-                            className="min-w-[459px] hovered max-w-[459px] h-[224px] flex items-center flex-col justify-between rounded-xl bg-card p-7"
-                        >
-                            <h3 className="font-medium text-[25px] text-white">Mint Squatz to LP</h3>
-                            <img className="w-[218px]" src="/assets/logo.png" alt="" />
-                            <p className="font-medium text-[19px] text-cardText">
-                                Mint Sqeeth by depositing XTZ as collateral
-                            </p>
-                        </div>
-                        <div
-                            onClick={() => {
-                                setMintToLp(false);
-                                setSquatzToLp(true);
-                            }}
-                            className="min-w-[459px] hovered max-w-[459px] h-[224px] flex items-center flex-col justify-between rounded-xl bg-card p-7 mt-5"
-                        >
-                            <h3 className="font-medium text-[25px] text-white">Buy Squatz to LP</h3>
-                            <img className="w-[100px]" src="/assets/cartoon.svg" alt="" />
-                            <p className="font-medium text-[19px] text-cardText">Buy Squatz directly from Quipuswap</p>
-                        </div>
-                    </>
-                )}
-            </div>
+
+                    <div className="max-cus-sm:w-full cus-sm:w-[459px] bg-card rounded-xl hovered">
+                        {mintToLP && <ShortOpen />}
+                        {squatzToLp && <ShortClose />}
+                    </div>
+                </div>
+            ) : (
+                <div className="flex flex-col items-center gap-2">
+                    <h2 className="font-medium text-[22px] text-btnSecondery">Obtain Squatz</h2>
+                    <div
+                        onClick={() => {
+                            setMintToLp(true);
+                            setSquatzToLp(false);
+                        }}
+                        className="max-cus-sm:w-full cus-sm:min-w-[459px] hovered cus-sm:max-w-[459px] h-[224px] flex items-center flex-col justify-between rounded-xl bg-card p-7"
+                    >
+                        <h3 className="font-medium text-[25px] text-white">Mint Squatz to LP</h3>
+                        <img className="w-[218px]" src="/assets/logo.png" alt="" />
+                        <p className="font-medium text-[19px] text-cardText">
+                            Mint Sqeeth by depositing XTZ as collateral
+                        </p>
+                    </div>
+                    <div
+                        onClick={() => {
+                            setMintToLp(false);
+                            setSquatzToLp(true);
+                        }}
+                        className="max-cus-sm:w-full cus-sm:min-w-[459px] hovered cus-sm:max-w-[459px] h-[224px] flex items-center flex-col justify-between rounded-xl bg-card p-7 mt-5"
+                    >
+                        <h3 className="font-medium text-[25px] text-white">Buy Squatz to LP</h3>
+                        <img className="w-[100px]" src="/assets/cartoon.svg" alt="" />
+                        <p className="font-medium text-[19px] text-cardText">Buy Squatz directly from Quipuswap</p>
+                    </div>
+                </div>
+            )}
         </Container>
     );
 }

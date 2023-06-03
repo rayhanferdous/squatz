@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import BurgerSvg from "../Svg/BurgerSvg";
 import Drawer from "../utilities/Drawer";
+import Link from "next/link";
 
 function Header() {
     const [isOpen, setIsOpen] = useState(false);
@@ -9,12 +10,20 @@ function Header() {
         <>
             <header className="w-full border-b border-border-b px-10 h-[82px] flex items-center justify-between">
                 <div className="flex items-center">
-                    <img className="max-mix-xl:w-[125px]" src="/assets/logo.png" alt="" />
+                    <Link href={"/"}>
+                        <img className="max-mix-xl:w-[125px]" src="/assets/logo.png" alt="" />
+                    </Link>
                     <ul className=" items-center gap-7 text-2xl text-linkText hidden mix-xl:flex">
                         <li className="cursor-pointer">Trade</li>
-                        <li className="cursor-pointer">Strategies</li>
-                        <li className="cursor-pointer">Positions</li>
-                        <li className="cursor-pointer">LP</li>
+                        <Link href={"/strategies"}>
+                            <li className="cursor-pointer">Strategies</li>
+                        </Link>
+                        <Link href={"/positions"}>
+                            <li className="cursor-pointer">Positions</li>
+                        </Link>
+                        <Link href={"/lp"}>
+                            <li className="cursor-pointer">LP</li>
+                        </Link>
                         <li className="cursor-pointer">FAQ</li>
                     </ul>
                 </div>
@@ -70,9 +79,15 @@ function Header() {
                     </button>
                     <ul className="gap-2 text-2xl flex-col text-linkText flex">
                         <li className="cursor-pointer">Trade</li>
-                        <li className="cursor-pointer">Strategies</li>
-                        <li className="cursor-pointer">Positions</li>
-                        <li className="cursor-pointer">LP</li>
+                        <Link href={"/strategies"}>
+                            <li className="cursor-pointer">Strategies</li>
+                        </Link>
+                        <Link href={"/positions"}>
+                            <li className="cursor-pointer">Positions</li>
+                        </Link>
+                        <Link href={"/lp"}>
+                            <li className="cursor-pointer">LP</li>
+                        </Link>
                         <li className="cursor-pointer">FAQ</li>
                     </ul>
                 </div>
