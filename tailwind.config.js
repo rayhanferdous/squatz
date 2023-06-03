@@ -11,7 +11,9 @@ module.exports = {
                 inter: ["Inter", "sans-serif"],
             },
             screens: {
+                "cus-sm": "570px",
                 "mix-xl": "1400px",
+                "res-xl": "1842px",
                 "2xl": "1920px",
             },
             colors: {
@@ -28,5 +30,5 @@ module.exports = {
             },
         },
     },
-    plugins: [require("daisyui")],
+    plugins: [],
 };

@@ -16,7 +16,7 @@ function RightSidebarContent() {
     const [openShort, setOpenShort] = useState(true);
 
     return (
-        <div className="flex flex-col gap-9">
+        <div className="flex flex-col gap-9 max-cus-sm:w-full cus-sm:max-w-[459px]">
             <RightSideBarTop
                 active={activeLong}
                 setActiveLong={() => setActiveLong(true)}
@@ -63,7 +63,17 @@ function RightSidebarContent() {
                         </div>
                     </div>
                 )}
-                {activeLong ? openLong ? <LongOpen /> : <LongClose /> : openShort ? <ShortOpen /> : <ShortClose />}
+                {activeLong ? (
+                    openLong ? (
+                        <LongOpen />
+                    ) : (
+                        <LongClose />
+                    )
+                ) : openShort ? (
+                    <ShortOpen />
+                ) : (
+                    <ShortClose />
+                )}
             </div>
         </div>
     );

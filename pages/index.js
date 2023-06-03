@@ -8,8 +8,8 @@ export default function Home() {
     const [activeChartBtn, setActiveChartBtn] = useState(1);
     const [activeFund, setActiveFund] = useState(true);
     return (
-        <Container className={"flex justify-between pt-8"}>
-            <div className="w-[1244px] flex flex-col gap-11">
+        <Container className={"flex justify-between pt-8 max-mix-xl:flex-col max-res-xl:gap-8"}>
+            <div className="res-xl:w-[1244px] max-res-xl:w-full flex flex-col gap-11">
                 <div className="">
                     <div className="flex gap-2 items-center">
                         <img className="w-[88px]" src="/assets/logo.svg" alt="" />
@@ -18,8 +18,8 @@ export default function Home() {
                             <p className="text-xl text-linkText">Perpetual leverage without liquidations</p>
                         </div>
                     </div>
-                    <div className="flex justify-between items-center mt-2 ml-6">
-                        <div className="grid grid-cols-4 gap-8">
+                    <div className="flex justify-between res-xl:items-center mt-2 lg:ml-6 max-res-xl:gap-6 max-res-xl:flex-col">
+                        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 ">
                             <HeroBtn titleOne={"XTZ² Price"} />
                             <HeroBtn titleOne="Historical Daily" titleTwo="Funding " />
                             <HeroBtn titleOne="Current Implied" titleTwo="Funding " />
@@ -29,7 +29,7 @@ export default function Home() {
                             <HeroBtn titleTwo="Implied Volatility" />
                             <HeroBtn titleTwo="Norm Factor" />
                         </div>
-                        <div className="min-w-[459px] hovered max-w-[459px] h-[181px] flex flex-col gap-3.5 rounded-xl bg-card p-8">
+                        <div className="cus-sm:min-w-[459px] hovered cus-sm:max-w-[459px] max-cus-sm:w-full h-[181px] flex flex-col gap-3.5 rounded-xl bg-card p-8">
                             <div className="flex items-center justify-between">
                                 <p className="font-bold text-[19px] text-cardText">My Position</p>
                                 <button className="bg-cardBtn font-bold text-white w-[72px] h-[29px] rounded-xl">
@@ -186,12 +186,14 @@ export default function Home() {
                 <div
                     id="chart-container"
                     className={`${
-                        [2, 3].includes(activeChartBtn) ? "h-fit" : "min-h-[498px] max-h-[498px]"
+                        [2, 3].includes(activeChartBtn)
+                            ? "h-fit"
+                            : "min-h-[498px] max-h-[498px] max-res-xl:min-h-fit max-res-xl:max-h-fit"
                     } w-full px-2 py-6  bg-card
-                 rounded-xl hovered`}
+                 rounded-xl hovered `}
                 >
                     <div className="flex items-center gap-0">
-                        <div className="font-medium text-xl w-[600px] p-1.5 flex items-center mx-4 h-[51px] rounded-xl border border-btnSecondery">
+                        <div className="font-medium text-xl w-[600px] p-1.5 hidden cus-sm:flex items-center mx-4 h-[51px] rounded-xl border border-btnSecondery">
                             <button
                                 onClick={() => setActiveChartBtn(1)}
                                 className={` px-2 rounded-xl h-full min-w-fit ${
@@ -210,7 +212,7 @@ export default function Home() {
                             </button>
                             <button
                                 onClick={() => setActiveChartBtn(3)}
-                                className={` px-2 rounded-xl h-full w-full ${
+                                className={` px-2 rounded-xl h-full w-full hidden lg:block ${
                                     activeChartBtn == 3 ? "bg-btnSecondery/20 text-btnSecondery" : "text-cardText"
                                 }`}
                             >
@@ -218,14 +220,14 @@ export default function Home() {
                             </button>
                             <button
                                 onClick={() => setActiveChartBtn(4)}
-                                className={` px-2 rounded-xl h-full w-full ${
+                                className={` px-2 rounded-xl h-full w-full hidden lg:block ${
                                     activeChartBtn == 4 ? "bg-btnSecondery/20 text-btnSecondery" : "text-cardText"
                                 }`}
                             >
                                 Risks
                             </button>
                         </div>
-                        <div className="font-medium text-xl w-[170px] p-1.5 flex items-center px-4 h-[51px] rounded-xl border relative border-cardText">
+                        <div className="font-medium text-xl  hidden lg:flex w-[170px] p-1.5  items-center px-4 h-[51px] rounded-xl border relative border-cardText">
                             <input
                                 className="w-full text-white focus:outline-none bg-transparent"
                                 type="text"
@@ -237,9 +239,9 @@ export default function Home() {
                         </div>
                     </div>
                     {[1].includes(activeChartBtn) && (
-                        <div className="flex gap-7 w-full">
+                        <div className="flex gap-7 w-full max-res-xl:flex-col">
                             <ApexChart />
-                            <div className="min-w-[278px] max-w-[278px] mt-3">
+                            <div className="min-w-[278px] max-w-[278px] max-res-xl:min-w-fit max-res-xl:max-w-fit mt-3 ">
                                 <h2 className="font-medium text-2xl text-btnSecondery">What is squatz?</h2>
                                 <p className="text-white mt-10">
                                     Long squatz (XTZ) gives you a leveraged position with unlimited upside, protected

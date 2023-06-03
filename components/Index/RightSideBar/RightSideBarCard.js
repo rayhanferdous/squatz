@@ -8,7 +8,7 @@ function RightSideBarCard() {
                 <div>$0.00</div>
             </div>
             <div className="flex item-center justify-between gap-3 font-medium text-[23px] text-white">
-                <input className="text-white bg-transparent focus:outline-none" type="text" placeholder="0" />
+                <input className="text-white w-full bg-transparent focus:outline-none" type="text" placeholder="0" />
 
                 <div>XTZ</div>
             </div>
