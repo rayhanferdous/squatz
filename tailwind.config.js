@@ -13,6 +13,7 @@ module.exports = {
             screens: {
                 "cus-sm": "570px",
                 "mix-xl": "1400px",
+                "mod-xl": "1586px",
                 "res-xl": "1842px",
                 "2xl": "1920px",
             },

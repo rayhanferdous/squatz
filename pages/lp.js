@@ -11,8 +11,8 @@ function lp() {
     const [squatzToLp, setSquatzToLp] = useState(false);
 
     return (
-        <Container className={"flex justify-between pt-8"}>
-            <div className="w-[1244px] flex flex-col gap-11">
+        <Container className={"flex justify-between pt-8 max-mod-xl:flex-col max-res-xl:gap-8"}>
+            <div className="res-xl:w-[1244px] max-res-xl:w-full flex flex-col gap-11">
                 <div className="">
                     <div className="flex gap-2 items-center">
                         <img className="w-[88px]" src="/assets/logo.svg" alt="" />
@@ -21,8 +21,8 @@ function lp() {
                             <p className="text-xl text-linkText">arn LP fees for providing SQTZ-XTZ liquidity</p>
                         </div>
                     </div>
-                    <div className="flex gap-10 items-center mt-5 ml-6 ">
-                        <div className="min-w-[459px] hovered max-w-[459px] h-[181px] flex flex-col gap-3.5 rounded-xl bg-card p-8">
+                    <div className="flex gap-10 items-center mt-5 ml-6 max-xl:flex-col">
+                        <div className="cus-sm:min-w-[459px] hovered cus-sm:max-w-[459px] max-cus-sm:w-full h-[181px] flex flex-col gap-3.5 rounded-xl bg-card p-8">
                             <div className="flex justify-between">
                                 <HeroBtn titleOne={"XTZ² Price"} />
                                 <HeroBtn titleOne={"XTZ² Price"} />
@@ -91,17 +91,14 @@ function lp() {
             <div className="flex flex-col items-center gap-2">
                 {mintToLP || squatzToLp ? (
                     <div>
-                        <div onClick={() => {
-                                    setMintToLp(false);
-                                    setSquatzToLp(false);
-                                }} className="flex items-center mb-5 gap-2 cursor-pointer">
-                            <svg
-                                className="w-6 h-6"
-                                
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 24 24"
-                                fill="#fff"
-                            >
+                        <div
+                            onClick={() => {
+                                setMintToLp(false);
+                                setSquatzToLp(false);
+                            }}
+                            className="flex items-center mb-5 gap-2 cursor-pointer"
+                        >
+                            <svg className="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fff">
                                 <path
                                     fillRule="evenodd"
                                     d="M7.28 7.72a.75.75 0 010 1.06l-2.47 2.47H21a.75.75 0 010 1.5H4.81l2.47 2.47a.75.75 0 11-1.06 1.06l-3.75-3.75a.75.75 0 010-1.06l3.75-3.75a.75.75 0 011.06 0z"
