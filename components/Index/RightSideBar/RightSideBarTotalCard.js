@@ -1,19 +1,18 @@
 import DownArrowSvg from "@/components/Svg/DownArrowSvg";
 import React from "react";
+import Accordion from "./Accordion";
 
 function RightSideBarTotalCard() {
     return (
-        <div className="h-[53px] font-medium items-center flex justify-between rounded-2xl border border-[#535050] px-6 py-5">
-            <div className="flex item-center gap-1 justify-between font-medium text-sm text-cardText">
-                <div>Slippage:</div>
-                <div> 0.5%</div>
+        <Accordion title="Accordion Item 1">
+            <div className="flex items-center justify-between font-medium text-cardText">
+                <p>Value if XTZ up 2x</p>
+
+                <p className="text-sm">
+                    <span className="text-xs">$</span> 0
+                </p>
             </div>
-            <div className="flex item-center gap-1 text-sm justify-between font-medium text-white">
-                <div>Price Impact:</div>
-                <div className="text-darkGreen"> 0%</div>
-            </div>
-            <DownArrowSvg/>
-        </div>
+        </Accordion>
     );
 }
 

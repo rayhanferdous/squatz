@@ -23,13 +23,13 @@ function Header() {
                         <button
                             onClick={() => setShowFullText(!showFullText)}
                             className={`border border-[#21D7D7] h-10 rounded-2xl 
-                        text-btnSecondery font-semibold text-lg transition-all duration-300 ${
+                        text-btnSecondery hover:bg-btnSecondery hover:text-black font-semibold text-lg transition-all duration-300 ${
                             showFullText ? "w-[300px]" : "w-[238px]"
                         }`}
                         >
                             {showFullText ? "oSQTZ: tz1xxxx1xxxxxxxx" : "oSQTZ: tz1xxxx...xxxx"}
                         </button>
-                        <button className="bg-btnSecondery font-bold text-[19px] w-[208px] h-10 rounded-lg">
+                        <button className="bg-btnSecondery text-black border hover:text-btnSecondery border-transparent hover:border-[#21D7D7] hover:bg-transparent font-bold text-[19px] w-[208px] h-10 rounded-lg">
                             CONNECT WALLET
                         </button>
                     </div>

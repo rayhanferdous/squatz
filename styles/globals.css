@@ -1,17 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+    .hovered {
+        @apply border-2 border-transparent hover:shadow-btnSecondery/50 hover:shadow-[0_0px_90px_-13px_rgba(0,0,0,0.3)] hover:border-btnSecondery;
+    }
+}
+
 input[type="range"]::-webkit-slider-thumb {
-  background-color: white; /* Set the background color to white */
+    background-color: white; /* Set the background color to white */
 }
 
 input[type="range"]::-moz-range-thumb {
-  background-color: white; /* Set the background color to white */
+    background-color: white; /* Set the background color to white */
 }
 
 input[type="range"]::-ms-thumb {
-  background-color: white; /* Set the background color to white */
+    background-color: white; /* Set the background color to white */
 }

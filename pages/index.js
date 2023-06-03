@@ -29,7 +29,7 @@ export default function Home() {
                             <HeroBtn titleTwo="Implied Volatility" />
                             <HeroBtn titleTwo="Norm Factor" />
                         </div>
-                        <div className="min-w-[459px] max-w-[459px] h-[181px] flex flex-col gap-3.5 rounded-xl bg-card p-8">
+                        <div className="min-w-[459px] hovered max-w-[459px] h-[181px] flex flex-col gap-3.5 rounded-xl bg-card p-8">
                             <div className="flex items-center justify-between">
                                 <p className="font-bold text-[19px] text-cardText">My Position</p>
                                 <button className="bg-cardBtn font-bold text-white w-[72px] h-[29px] rounded-xl">
@@ -186,9 +186,9 @@ export default function Home() {
                 <div
                     id="chart-container"
                     className={`${
-                        [2,3].includes(activeChartBtn) ? "h-fit" : "min-h-[498px] max-h-[498px]"
+                        [2, 3].includes(activeChartBtn) ? "h-fit" : "min-h-[498px] max-h-[498px]"
                     } w-full px-2 py-6  bg-card
-                 rounded-xl`}
+                 rounded-xl hovered`}
                 >
                     <div className="flex items-center gap-0">
                         <div className="font-medium text-xl w-[600px] p-1.5 flex items-center mx-4 h-[51px] rounded-xl border border-btnSecondery">
@@ -239,7 +239,7 @@ export default function Home() {
                     {[1].includes(activeChartBtn) && (
                         <div className="flex gap-7 w-full">
                             <ApexChart />
-                            <div className="min-w-[278px] max-w-[278px]">
+                            <div className="min-w-[278px] max-w-[278px] mt-3">
                                 <h2 className="font-medium text-2xl text-btnSecondery">What is squatz?</h2>
                                 <p className="text-white mt-10">
                                     Long squatz (XTZ) gives you a leveraged position with unlimited upside, protected

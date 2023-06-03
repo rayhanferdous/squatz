@@ -930,30 +930,30 @@ const ApexChart = () => {
         dataLabels: {
             enabled: false,
         },
+        legend: {
+            labels: {
+                colors: "#fff", // set the desired color for legend labels
+            },
+        },
         stroke: {
             curve: "straight",
             fill: "#FFFFFF",
         },
         xaxis: {
             type: "datetime",
-            style: {
-                color: "#fff",
-            },
             labels: {
                 style: {
-                    color: "#fff",
+                    colors: "#fff",
                 },
                 format: "MMM yyyy",
             },
         },
         yaxis: [
             {
-                style: {
-                    color: "#fff",
-                },
+                opposite: true,
                 labels: {
                     style: {
-                        color: "#fff",
+                        colors: "#fff",
                     },
                     formatter: function (value) {
                         return value + "%";
@@ -972,7 +972,7 @@ const ApexChart = () => {
     };
 
     return (
-        <div id="chart-timeline" className="w-full">
+        <div id="chart-timeline" className="w-full mt-3">
             <ApexCharts options={options} series={series} type="area" height={400} />
         </div>
     );

@@ -22,7 +22,7 @@ function RightSidebarContent() {
                 setActiveLong={() => setActiveLong(true)}
                 setActiveShort={() => setActiveLong(false)}
             />
-            <div className="bg-card rounded-xl">
+            <div className="bg-card rounded-xl hovered">
                 {activeLong && (
                     <div className="flex h-[59px] w-full font-medium text-[19px]">
                         <div
