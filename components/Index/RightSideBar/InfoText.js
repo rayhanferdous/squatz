@@ -1,11 +1,11 @@
 import InfoSvg from "@/components/Svg/InfoSvg";
 import React from "react";
 
-function InfoText() {
+function InfoText({ title = "Value if XTZ up 2x" }) {
     return (
         <div className="flex items-center justify-between font-medium text-cardText">
             <div className="flex items-center gap-2">
-                <p>Value if XTZ up 2x</p>
+                <p>{title}</p>
                 <InfoSvg />
             </div>
             <p className="text-sm">

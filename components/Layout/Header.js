@@ -14,7 +14,9 @@ function Header() {
                         <img className="max-mix-xl:w-[125px]" src="/assets/logo.png" alt="" />
                     </Link>
                     <ul className=" items-center gap-7 text-2xl text-linkText hidden mix-xl:flex">
-                        <li className="cursor-pointer">Trade</li>
+                        <Link href={"/"}>
+                            <li className="cursor-pointer">Trade</li>
+                        </Link>{" "}
                         <Link href={"/strategies"}>
                             <li className="cursor-pointer">Strategies</li>
                         </Link>
@@ -78,7 +80,9 @@ function Header() {
                         {showFullText ? "oSQTZ: tz1xxxx1xxxxxxxx" : "oSQTZ: tz1xxxx...xxxx"}
                     </button>
                     <ul className="gap-2 text-2xl flex-col text-linkText flex">
-                        <li className="cursor-pointer">Trade</li>
+                        <Link href={"/"}>
+                            <li className="cursor-pointer">Trade</li>
+                        </Link>
                         <Link href={"/strategies"}>
                             <li className="cursor-pointer">Strategies</li>
                         </Link>

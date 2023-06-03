@@ -1,5 +1,5 @@
-import ShortClose from "@/components/Index/RightSideBar/ShortClose";
-import ShortOpen from "@/components/Index/RightSideBar/ShortOpen";
+import BuySquatzLP from "@/components/Index/RightSideBar/BuySquatzLP";
+import MintToLp from "@/components/Index/RightSideBar/MintToLp";
 import Container from "@/components/Layout/Container";
 import HeroBtn from "@/components/utilities/HeroBtn";
 import React, { useState } from "react";
@@ -103,8 +103,8 @@ function lp() {
                     </div>
 
                     <div className="max-cus-sm:w-full cus-sm:w-[459px] bg-card rounded-xl hovered">
-                        {mintToLP && <ShortOpen />}
-                        {squatzToLp && <ShortClose />}
+                        {mintToLP && <MintToLp />}
+                        {squatzToLp && <BuySquatzLP />}
                     </div>
                 </div>
             ) : (
